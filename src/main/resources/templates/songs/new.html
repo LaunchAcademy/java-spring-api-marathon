@@ -5,17 +5,17 @@
 
     <form action="/songs" method="POST" th:object="${song}">
       <div>
-        <label for="title">Title</label>
+        <label th:for="title">Title</label>
         <input type="text" th:field="*{title}" />
         <p th:errors="*{title}"></p>
       </div>
       <div>
-        <label for="genre">Genre</label>
+        <label th:for="genre">Genre</label>
         <input type="text" th:field="*{genre}" />
         <p th:errors="*{genre}"></p>
       </div>
       <div>
-        <label for="releaseYear">Release Year</label>
+        <label th:for="releaseYear">Release Year</label>
         <input type="number" th:field="*{releaseYear}" />
         <p th:errors="*{releaseYear}"></p>
       </div>
@@ -27,8 +27,8 @@
           <label>No
             <input type="radio" th:field="*{explicitContent}" value="false">
           </label>
+          <p th:errors="*{explicitContent}"></p>
         </p>
-        <p th:errors="*{title}"></p>
       </div>
       <div><input type="submit" value="Add Song" /></div>
     </form>
