@@ -9,11 +9,12 @@ idea .
 
 ## For those about to Rock...
 
-The only thing better than writing code is writing music. This simple irrefutable fact has driven you to use your Java skills to find a better way to get your songs out and into the world.
+The only thing better than writing code is writing music. This simple irrefutable fact has driven
+you to use your Java skills to find a better way to get your songs out and into the world.
 
 Take a look at the provided migration, entity, and templates before getting started with the below.
 
-### Create Your Repository and Controller
+### Create Your Repository, Service, and Controller
 
 ```no-highlight
 As a musician
@@ -23,21 +24,11 @@ So I can teach the world to rock
 
 Acceptance Criteria:
 
-- Create a SongRepository which extends the `PagingAndSortingRepository`
-- Create a Controller which can utilize this Repository
+1. Create a SongRepository.
+2. Create a SongService that utilizes the SongRepository.
+3. Create a SongController that utilizes the SongService.
 
-
-### Create Your Songs via Web Form
-
-```no-highlight
-As a musician
-I want to be able to enter songs via a form
-To efficiently save my songs
-```
-
-- Create a `@GetMapping` to show your form
-- Create a `@PostMapping` to persist user input
-- Saving your song successfully redirects the user to `/songs/new`
+- Don't worry about adding in any extra methods at this point. Only do what you need to create the classes/interfaces and link them together.
 
 ### List Your Songs
 
@@ -47,8 +38,33 @@ I want to see a listing of my songs
 So that I can keep an itemized list
 ```
 
-- When a user navigates to `/songs` they should see a paginated list of songs
-- Saving your song successfully now redirects the user to `/songs` instead
+4. When a user navigates to `/songs` they should see a list of songs
+
+### Limit the songs displayed
+
+```no-highlight
+As a musician
+I want to throttle how many results show at once
+Because I was rocking too hard
+```
+
+Acceptance Criteria:
+
+5. Add in pagination
+   - Update the SongRepository to extend the `PagingAndSortingRepository`
+   - Update the SongService and Controller to handle pagination
+
+### Create Your Songs via Web Form
+
+```no-highlight
+As a musician
+I want to be able to enter songs via a form
+To efficiently save my songs
+```
+
+6. When a user navigates to `/songs/new` they should see a form to add a new song.
+7. Create a `@PostMapping` endpoint to persist user input
+   - Saving your song successfully redirects the user to `/songs`
 
 ### List Your Songs via API
 
@@ -58,8 +74,8 @@ I want to make my songs available via an API
 So web crawlers can find me
 ```
 
-- Create a RestController for your songs
-- visiting `/api/v1/songs` should display a JSON of your songs
+8. Create a RestController for your songs
+9. visiting `/api/v1/songs` should display a JSON of your songs
 
 ### Individual Song Detail via API
 
@@ -69,8 +85,8 @@ I want to be able to serve up a single song
 So that people can embed my song
 ```
 
-- visiting `/api/v1/songs/{id}` should display a JSON for the song with the matching ID
-- ensure that the show endpoint has error handling and results in a 404 if the song is not found
+10. visiting `/api/v1/songs/{id}` should display a JSON for the song with the matching ID
+    - ensure that the show endpoint has error handling and results in a 404 if the song is not found
 
 ## Non Core Stories
 

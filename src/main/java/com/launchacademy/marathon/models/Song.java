@@ -7,15 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "songs")
@@ -29,23 +23,15 @@ public class Song {
   @Column(name="id", nullable = false, unique = true)
   private Integer id;
 
-  @NotBlank
-  @Size(min=1,max=25)
   @Column(name="title", nullable = false)
   private String title;
 
-  @NotBlank
-  @Size(min=1, max=15)
   @Column(name="genre")
-  @Pattern(regexp="^\\D*$", message="Cannot contain numbers")
   private String genre;
 
-  @NotNull
-  @Range(min=1900, max=2021)
   @Column(name="release_year", nullable = false)
   private Integer releaseYear;
 
-  @NotNull
   @Column(name="explicit_content", nullable = false)
   private Boolean explicitContent;
 }

@@ -7,17 +7,14 @@
       <div>
         <label for="title">Title</label>
         <input type="text" th:field="*{title}" />
-        <p th:errors="*{title}"></p>
       </div>
       <div>
         <label for="genre">Genre</label>
         <input type="text" th:field="*{genre}" />
-        <p th:errors="*{genre}"></p>
       </div>
       <div>
         <label for="releaseYear">Release Year</label>
         <input type="number" th:field="*{releaseYear}" />
-        <p th:errors="*{releaseYear}"></p>
       </div>
       <div>
         <p>Explicit Content:
@@ -28,7 +25,6 @@
             <input type="radio" th:field="*{explicitContent}" value="false">
           </label>
         </p>
-        <p th:errors="*{title}"></p>
       </div>
       <div><input type="submit" value="Add Song" /></div>
     </form>
