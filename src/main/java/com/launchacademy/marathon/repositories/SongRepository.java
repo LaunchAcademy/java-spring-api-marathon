@@ -1,10 +1,7 @@
 package com.launchacademy.marathon.repositories;
 
-import com.launchacademy.marathon.models.Song;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.stereotype.Repository;
+import com.launchacademy.marathon.models.*;
+import org.springframework.data.repository.*;
 
-@Repository
-public interface SongRepository extends PagingAndSortingRepository<Song, Integer> {
-
+public interface SongRepository extends PagingAndSortingRepository<Song,Integer> {
 }

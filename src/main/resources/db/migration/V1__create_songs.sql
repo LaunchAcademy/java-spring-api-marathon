@@ -9,3 +9,5 @@ CREATE TABLE songs (
 );
 
 INSERT INTO songs (title, genre, release_year, explicit_content) VALUES ('American Pie', 'rock', 1971, false);
+INSERT INTO songs (title, genre, release_year, explicit_content) VALUES ('Bonfire', 'rap', 2011, true);
+INSERT INTO songs (title, release_year, explicit_content) VALUES ('Please Mr. Postman', 1961, false);
